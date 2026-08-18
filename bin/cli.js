@@ -90,7 +90,9 @@ function scanDirectory(dir, fileList = [], rootDir = dir) {
               lines: content.split('\n').length
             });
           }
-        } catch (_) {}
+        } catch (err) {
+          // Skip unreadable files safely
+        }
       }
     }
   }
