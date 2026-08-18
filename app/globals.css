@@ -1,0 +1,351 @@
+/* Google Fonts are loaded via <link> in app/layout.tsx for optimal performance (no render-blocking @import) */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UI/UX Pro Max - Clerk Minimalist Light Design Tokens */
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --surface-1: #ffffff;
+  --surface-2: #f8fafc;
+  --surface-3: #f1f5f9;
+  --border-subtle: #e2e8f0;
+  --border-prominent: #cbd5e1;
+  --accent-primary: #0f172a;
+  --accent-secondary: #334155;
+  --accent-indigo: #4f46e5;
+  --font-estedad: 'Estedad', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Estedad', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-vazir: 'Estedad', system-ui, -apple-system, sans-serif;
+}
+
+[dir="rtl"],
+[dir="ltr"],
+html,
+body {
+  font-family: var(--font-estedad), system-ui, -apple-system, sans-serif;
+}
+
+* {
+  font-family: inherit;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+code, pre, kbd {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Accessible focus ring utilities (WCAG 2.2 AA) */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+}
+
+/* Touch Target Minimum (44x44px - Apple HIG & WCAG 2.2) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Clerk.com Iconic Tech Circuit Background Grid */
+.clerk-circuit-grid {
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, #000 35%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, #000 35%, transparent 95%);
+}
+
+/* Central Frosted Lock Dome / Arch (Clerk Top Element) */
+.clerk-top-lock-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 960px;
+  height: 280px;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.clerk-top-lock-orb {
+  position: relative;
+  top: -16px;
+  width: 76px;
+  height: 76px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 245, 249, 0.85) 100%);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  box-shadow: 
+    0 12px 28px -4px rgba(0, 0, 0, 0.08),
+    0 4px 10px -2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.clerk-top-lock-lines {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(780px, 92vw);
+  height: 120px;
+  background-image: 
+    radial-gradient(circle at 180px 40px, rgba(148, 163, 184, 0.4) 3px, transparent 4px),
+    radial-gradient(circle at 600px 40px, rgba(148, 163, 184, 0.4) 3px, transparent 4px),
+    linear-gradient(to right, transparent, rgba(203, 213, 225, 0.7) 30%, rgba(203, 213, 225, 0.7) 70%, transparent);
+  background-size: 100% 1px, 100% 1px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: center 24px, center 24px, center 24px;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+/* Custom Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  border: 1px solid #f8fafc;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Clerk Floating Command Box */
+.clerk-command-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  box-shadow: 
+    0 20px 35px -10px rgba(0, 0, 0, 0.07),
+    0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clerk-command-box:hover {
+  border-color: #cbd5e1;
+  box-shadow: 
+    0 25px 40px -10px rgba(0, 0, 0, 0.1),
+    0 2px 5px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Clerk Light Panels & Cards */
+.quantix-panel {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+.quantix-panel-glow {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.75rem;
+  box-shadow: 
+    0 10px 30px -5px rgba(0, 0, 0, 0.05),
+    0 1px 3px 0 rgba(0, 0, 0, 0.03);
+}
+
+.quantix-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.quantix-card:hover {
+  background: #fafafc;
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Clerk Dark Primary Action Button */
+.btn-quantix-primary {
+  background: #09090b;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #18181b;
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-quantix-primary:hover {
+  background: #18181b;
+  box-shadow: 0 4px 14px -1px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
+}
+
+.btn-quantix-primary:active {
+  transform: scale(0.98);
+}
+
+/* Clerk Clean Secondary Pill Button */
+.btn-quantix-secondary {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 9999px;
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-quantix-secondary:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #000000;
+}
+
+.btn-quantix-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Clerk Pill Badges */
+.badge-quantix {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  border-radius: 9999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* High Contrast Light Markdown Typography for Results View */
+.prose-quantix {
+  max-width: 100%;
+  color: #334155;
+  line-height: 1.8;
+}
+
+.prose-quantix h2 {
+  color: #0f172a;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.85rem;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.prose-quantix h3 {
+  color: #1e293b;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-quantix p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-quantix ul {
+  list-style-type: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prose-quantix li {
+  position: relative;
+  padding-inline-start: 1.25rem;
+}
+
+.prose-quantix li::before {
+  content: '•';
+  position: absolute;
+  inset-inline-start: 0;
+  color: #64748b;
+  font-size: 1.1em;
+}
+
+.prose-quantix code {
+  color: #0f172a;
+  background: #f1f5f9;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.45rem;
+  border: 1px solid #e2e8f0;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+.prose-quantix pre {
+  background: #0f172a !important;
+  border: 1px solid #1e293b;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.prose-quantix pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: #f8fafc;
+  font-size: 0.85rem;
+}
+
+.prose-quantix strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
