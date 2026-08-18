@@ -1,11 +1,16 @@
 {
-  "name": "ai-codebase-auditor",
-  "version": "0.1.0",
-  "private": true,
+  "name": "quantix-auditor",
+  "version": "1.0.0",
+  "description": "AI Multi-Agent 7-Dimensional Codebase & Cybersecurity Auditor (In-Memory RAM Isolation & Local Offline GGUF)",
+  "bin": {
+    "quantix": "./bin/cli.js",
+    "quantix-auditor": "./bin/cli.js"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "audit": "node ./bin/cli.js . --agent",
     "lint": "next lint"
   },
   "dependencies": {
