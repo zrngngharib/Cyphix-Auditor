@@ -71,7 +71,7 @@ export const LiveAuditStream: React.FC<LiveAuditStreamProps> = ({
   ];
 
   return (
-    <div className="quantix-panel p-6 sm:p-8 space-y-6 shadow-sm border border-slate-200">
+    <div className="cyphix-panel p-6 sm:p-8 space-y-6 shadow-sm border border-slate-200">
       {/* Header Banner & Live Metrics */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-slate-100">
         <div className="flex items-center gap-3.5">
@@ -145,11 +145,10 @@ export const LiveAuditStream: React.FC<LiveAuditStreamProps> = ({
         <button
           type="button"
           onClick={() => setActiveTab('domains')}
-          className={`px-3.5 py-1.5 rounded-xl transition-all ${
-            activeTab === 'domains'
+          className={`px-3.5 py-1.5 rounded-xl transition-all ${activeTab === 'domains'
               ? 'bg-slate-900 text-white shadow-xs'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-          }`}
+            }`}
         >
           {t('step2Title')} (7 Agents)
         </button>
@@ -157,11 +156,10 @@ export const LiveAuditStream: React.FC<LiveAuditStreamProps> = ({
         <button
           type="button"
           onClick={() => setActiveTab('ast')}
-          className={`px-3.5 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
-            activeTab === 'ast'
+          className={`px-3.5 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${activeTab === 'ast'
               ? 'bg-slate-900 text-white shadow-xs'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-          }`}
+            }`}
         >
           <span>{t('liveFindingsTab')}</span>
           {astFindings.length > 0 && (
@@ -174,11 +172,10 @@ export const LiveAuditStream: React.FC<LiveAuditStreamProps> = ({
         <button
           type="button"
           onClick={() => setActiveTab('terminal')}
-          className={`px-3.5 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
-            activeTab === 'terminal'
+          className={`px-3.5 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${activeTab === 'terminal'
               ? 'bg-slate-900 text-white shadow-xs'
               : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-          }`}
+            }`}
         >
           <Terminal className="w-3.5 h-3.5" />
           <span>{t('liveTerminalTab')}</span>
@@ -197,24 +194,22 @@ export const LiveAuditStream: React.FC<LiveAuditStreamProps> = ({
             return (
               <div
                 key={`domain-card-${dId}`}
-                className={`p-4 rounded-2xl border transition-all duration-200 ${
-                  isRunning
+                className={`p-4 rounded-2xl border transition-all duration-200 ${isRunning
                     ? 'bg-slate-900 border-slate-950 text-white shadow-md scale-[1.01]'
                     : isDone
-                    ? 'bg-white border-slate-200 text-slate-900'
-                    : 'bg-slate-50 border-slate-200/80 text-slate-500 opacity-75'
-                }`}
+                      ? 'bg-white border-slate-200 text-slate-900'
+                      : 'bg-slate-50 border-slate-200/80 text-slate-500 opacity-75'
+                  }`}
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex items-center gap-2.5">
                     <div
-                      className={`p-2 rounded-xl shrink-0 ${
-                        isRunning
+                      className={`p-2 rounded-xl shrink-0 ${isRunning
                           ? 'bg-slate-800 text-white'
                           : isDone
-                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                          : 'bg-white text-slate-400 border border-slate-200'
-                      }`}
+                            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                            : 'bg-white text-slate-400 border border-slate-200'
+                        }`}
                     >
                       <Icon className="w-4 h-4" />
                     </div>
@@ -226,8 +221,8 @@ export const LiveAuditStream: React.FC<LiveAuditStreamProps> = ({
                         {isRunning
                           ? 'Agent analyzing...'
                           : isDone
-                          ? `${completed.durationMs}ms`
-                          : 'In queue'}
+                            ? `${completed.durationMs}ms`
+                            : 'In queue'}
                       </div>
                     </div>
                   </div>
@@ -287,7 +282,7 @@ export const LiveAuditStream: React.FC<LiveAuditStreamProps> = ({
       {activeTab === 'terminal' && (
         <div className="rounded-2xl bg-slate-950 text-slate-200 p-4 font-mono text-xs space-y-1.5 max-h-72 overflow-y-auto border border-slate-800 shadow-inner">
           <div className="text-slate-500 text-[10px] pb-1 border-b border-slate-800 flex items-center justify-between">
-            <span>QUANTIX MULTI-AGENT SSE PIPELINE // CONSOLE</span>
+            <span>CYPHIX MULTI-AGENT SSE PIPELINE // CONSOLE</span>
             <span>LIVE</span>
           </div>
           {logs.map((log, idx) => (
