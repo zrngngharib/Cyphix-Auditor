@@ -139,15 +139,63 @@ graph LR
 
 ---
 
-## 💻 Local Offline Models (GGUF via CPU)
+## 💻 Offline Air-Gapped System & Hardware Requirements
 
-Cyphix supports 100% private, offline inference running on regular CPU and System RAM (no dedicated GPU required):
+Cyphix Auditor is engineered to run **100% offline in air-gapped, zero-trust environments** with zero outbound internet requests. All AI evaluation runs directly on your local CPU and System RAM via 4-bit quantized GGUF binaries.
 
-1. **DeepSeek-R1-Distill-Qwen-7B (`model.gguf` - 4.36 GB):** Deep reasoning & vulnerability discovery. *(Recommended: 16GB+ RAM, 8-core CPU)*.
-2. **Qwen2.5-Coder-7B-Instruct (`qwen-coder-7b.gguf` - 4.36 GB):** Ultra-fast instruction model tailored for code architecture and refactoring.
-3. **Llama-3.2-3B-Instruct (`llama-3.2-3b.gguf` - 1.88 GB):** Lightweight model ideal for standard laptops with 8GB RAM.
+### 🖥️ Hardware Specifications
+
+| Specification Tier | Target Model | Minimum CPU | Minimum RAM | Free Disk Space | Recommended Device |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Tier 1: Lightweight** | **Llama-3.2-3B-Instruct** | 4 Cores (x86_64 / ARM64) | **8 GB RAM** | 3 GB SSD | Standard ultrabooks, MacBook Air M1/M2, Intel i5/Ryzen 5 |
+| **Tier 2: Recommended** | **Qwen2.5-Coder-7B** | 6–8 Cores | **16 GB RAM** | 6 GB SSD | Developer laptops, MacBook Pro, Intel i7/Ryzen 7 |
+| **Tier 3: Deep Reasoning** | **DeepSeek-R1-7B** | 8+ Cores | **16–32 GB RAM** | 10 GB SSD | High-performance workstations, Apple Silicon M-Series |
+
+> **Note on GPUs:** Dedicated GPUs (NVIDIA CUDA, Apple Metal, AMD ROCm/Vulkan) are supported automatically if available, but **NO GPU is required** — Cyphix is heavily optimized for multi-threaded CPU inference.
 
 ---
+
+### 📦 Software & Runtime Prerequisites
+
+* **Runtime:** **Node.js v18.17.0+** or **Node.js v20.x LTS** (Recommended).
+* **Package Manager:** `npm` (v9+), `pnpm` (v8+), `yarn`, or `bun`.
+* **Supported Operating Systems:**
+  * **Windows:** Windows 10 / Windows 11 (64-bit) with Visual C++ Redistributable.
+  * **macOS:** macOS 12 Monterey or newer (Native Apple Silicon ARM64 & Intel x86_64).
+  * **Linux:** Ubuntu 20.04+, Debian 11+, Fedora 36+, Arch Linux, CentOS/RHEL 8+.
+* **Native C++ Compilation (Handled automatically via node-llama-cpp):**
+  * Windows: Visual Studio C++ Build Tools (included with Node.js installer).
+  * macOS: Xcode Command Line Tools (`xcode-select --install`).
+  * Linux: `build-essential` (`sudo apt install build-essential cmake gcc g++`).
+
+---
+
+### 🤖 Supported Offline GGUF Model Binaries
+
+Download any compatible 4-bit quantized GGUF model and place it directly into the `./models/` folder:
+
+| Model Name | File Name | Size | Architecture | Ideal Use Case |
+| :--- | :--- | :---: | :--- | :--- |
+| **Llama 3.2 3B Instruct** | `llama-3.2-3b-instruct-q4_k_m.gguf` | **1.88 GB** | Meta Llama 3.2 | Ultra-fast auditing on standard 8GB RAM laptops. |
+| **Qwen 2.5 Coder 7B Instruct** | `qwen2.5-coder-7b-instruct-q4_k_m.gguf` | **4.36 GB** | Alibaba Qwen 2.5 | High-precision code architecture, TypeScript typings & refactoring. |
+| **DeepSeek-R1 Distill Qwen 7B** | `DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf` | **4.36 GB** | DeepSeek R1 | Multi-step vulnerability reasoning & penetration testing. |
+
+---
+
+### 🔌 How to Run in a 100% Air-Gapped (Zero-Internet) Environment
+
+1. **Download the GGUF model** using the built-in **Model Manager** modal or from [Hugging Face](https://huggingface.co/models?search=gguf).
+2. **Move the `.gguf` file** into the `./models/` directory (e.g. `./models/model.gguf`).
+3. **Disconnect all network connections** (disable Wi-Fi / unplug Ethernet).
+4. **Launch Cyphix Web UI or CLI:**
+   ```bash
+   # Launch Offline Web Dashboard
+   npm run dev
+
+   # Or run Offline Terminal CLI Security Audit
+   node ./bin/cli.js /path/to/project --agent
+   ```
+5. All code analysis, AST parsing, and AI multi-agent reasoning will execute 100% in RAM with **zero external telemetry or network packets**.
 
 ## ⌨️ Standalone CLI Tool
 
