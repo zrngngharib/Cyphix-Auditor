@@ -5,6 +5,7 @@ export interface AstFinding {
   ruleId: string;
   severity: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
   category: 'security' | 'backend' | 'performance' | 'quality';
+  domainIds: number[];
   file: string;
   line: number;
   snippet: string;
@@ -27,6 +28,7 @@ interface SecurityRulePattern {
   regex: RegExp;
   severity: 'CRITICAL' | 'HIGH' | 'MEDIUM' | 'LOW';
   category: 'security' | 'backend' | 'performance' | 'quality';
+  domainIds: number[];
   issueTemplate: Record<SupportedLanguage, string>;
   fixTemplate: Record<SupportedLanguage, string>;
 }
@@ -40,6 +42,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /(?:AKIA|ABIA|ACCA|ASIA)[0-9A-Z]{16}/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [3],
     issueTemplate: {
       ckb: 'کلیلی ڕاستەقینەی AWS Access Key ئاشکراکراوە لەناو کۆددا.',
       badini: 'کلیلا ڕاستەقینە یا AWS Access Key د ناڤ کۆدی دا یا ئاشکەرایە.',
@@ -60,6 +63,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /(?:api[_-]?key|secret[_-]?key|auth[_-]?token|bearer[_\s:]+token)['"]?\s*[:=]\s*['"][a-zA-Z0-9_\-]{24,}['"]/gi,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [3],
     issueTemplate: {
       ckb: 'تۆکەن یان کلیلی نهێنی API بە شێوازی دەستنووس ئاشکراکراوە.',
       badini: 'تۆکەن یان کلیلا نهێنی یا API د ناڤ کۆدی دا یا ئاشکەرایە.',
@@ -80,6 +84,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /(?:ghp_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9]{82})/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [3],
     issueTemplate: {
       ckb: 'تۆکەنی تایبەتی گیت‌هەب (GitHub PAT) ئاشکراکراوە.',
       badini: 'تۆکەنا تایبەت یا گیت هاب ئاشکەرایە.',
@@ -100,6 +105,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /-----BEGIN (?:RSA|OPENSSH|EC|DSA) PRIVATE KEY-----/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [3],
     issueTemplate: {
       ckb: 'کلیلی نهێنی سێرڤەر (Private SSH/RSA Key) لەناو فایلدا جێهێڵدراوە.',
       badini: 'کلیلا تایبەت یا SSH/RSA د ناڤ فایلی دا یا هاتیە هێلان.',
@@ -124,6 +130,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /(?:pickle|_pickle|cPickle)\.loads?\s*\(/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [1, 3],
     issueTemplate: {
       ckb: 'بەکارهێنانی pickle.loads لە پایتۆندا دەبێتە هۆی جێبەجێکردنی کۆدی نادیار (RCE).',
       badini: 'بکارئینانا pickle.loads د پایتۆن دا مەترسییا لێدانا کۆدی دروست دکەت.',
@@ -144,6 +151,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /subprocess\.(?:Popen|run|call|check_output)\s*\([^)]*shell\s*=\s*True/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [1, 3],
     issueTemplate: {
       ckb: 'فەرمانی شێڵ لە پایتۆن بە shell=True ئەنجام دراوە (Command Injection).',
       badini: 'فەرمانا شێڵ ب shell=True هاتیە بکارئینان کو مەترسیدارە.',
@@ -168,6 +176,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /\b(?:shell_exec|passthru|system|exec)\s*\(\s*\$_(?:GET|POST|REQUEST)/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [1, 3],
     issueTemplate: {
       ckb: 'فەرمانی سێرڤەر لە PHP بە ڕاستەوخۆ وەرگرتنی داتای بەکارهێنەر لێدراوە.',
       badini: 'فەرمانا سێرڤەری د PHP دا ب داتایێن بکارئینەری هاتیە لێدان.',
@@ -188,6 +197,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /\bunserialize\s*\(\s*\$_(?:GET|POST|COOKIE|REQUEST)/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [1, 3],
     issueTemplate: {
       ckb: 'فەنکشنی unserialize() بە داتای بەکارهێنەر دەبێتە هۆی Object Injection.',
       badini: 'unserialize() ب داتایێن بکارئینەری مەترسییا Object Injection دروست دکەت.',
@@ -212,6 +222,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /\$\{jndi:(?:ldap|rmi|dns|nis|iiop)/gi,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [1, 3, 5],
     issueTemplate: {
       ckb: 'کەلێنی مەترسیداری Log4Shell (JNDI Injection) ئاشکراکراوە لە لۆگدا.',
       badini: 'مەترسییا Log4Shell (JNDI Injection) د ناڤ لۆگی دا یا هەی.',
@@ -236,6 +247,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /\b(?:strcpy|strcat|gets|sprintf)\s*\(/g,
     severity: 'HIGH',
     category: 'security',
+    domainIds: [3, 6],
     issueTemplate: {
       ckb: 'بەکارهێنانی فەنکشنە نائارامەکانی بیرگە دەبێتە هۆی Buffer Overflow.',
       badini: 'بکارئینانا فەنکشنێن نائارامێن بیرگەهێ مەترسییا Buffer Overflow دروست دکەت.',
@@ -260,6 +272,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /\beval\s*\([^\)]+\)/g,
     severity: 'CRITICAL',
     category: 'security',
+    domainIds: [1, 3],
     issueTemplate: {
       ckb: 'بەکارهێنانی فەنکشنی مەترسیداری eval() دەبێتە هۆی لێدانی کۆدی نادیار (Remote Code Execution).',
       badini: 'بکارئینانا فەنکشنا مەترسیدار یا eval() مەترسییا مەزن دروست دکەت.',
@@ -280,6 +293,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /dangerouslySetInnerHTML\s*=\s*\{\s*\{\s*__html\s*:/g,
     severity: 'HIGH',
     category: 'security',
+    domainIds: [2, 3],
     issueTemplate: {
       ckb: 'بەکارهێنانی dangerouslySetInnerHTML دەبێتە هۆی کەلێنی XSS ئەگەر داتاکان خاوێن نەکرێنەوە.',
       badini: 'بکارئینانا dangerouslySetInnerHTML دەرگەهێ هاککرنا XSS ڤەدکەت.',
@@ -300,6 +314,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /(?:SELECT|INSERT|UPDATE|DELETE)\s+[^;\n]+(?:WHERE|SET|VALUES)\s+[^;\n]*(\+\s*|\$\{)[a-zA-Z0-9_\.]+/i,
     severity: 'CRITICAL',
     category: 'backend',
+    domainIds: [1, 3],
     issueTemplate: {
       ckb: 'کوێریی SQL بە لکاندنی ڕاستەوخۆی تێکست دروستکراوە (SQL Injection).',
       badini: 'کوێرییا SQL ب لکاندنا دەقی هاتیە چێکرن کو مەترسییا SQL Injection هەیە.',
@@ -320,6 +335,7 @@ const UNIVERSAL_SECURITY_RULES: SecurityRulePattern[] = [
     regex: /catch\s*\([^\)]*\)\s*\{\s*\}/g,
     severity: 'LOW',
     category: 'quality',
+    domainIds: [5, 7],
     issueTemplate: {
       ckb: 'بلۆکی catch بە بەتاڵی جێهێڵدراوە کە دەبێتە هۆی پەردەپۆشکردنی هەڵەکان (Silent Failure).',
       badini: 'بلۆکا catch یا بەتالە و خەلەتییان ڤەدشێریت.',
@@ -385,6 +401,7 @@ export function runAstScan(
             ruleId: pattern.name.toLowerCase().replace(/\s+/g, '-'),
             severity: pattern.severity,
             category: pattern.category,
+            domainIds: pattern.domainIds || [3],
             file: file.path,
             line: i + 1,
             snippet: lineContent.trim().slice(0, 120),

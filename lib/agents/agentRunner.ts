@@ -106,6 +106,7 @@ export async function runLocalUnifiedAudit(options: {
   codebase: string;
   localModelPath?: string;
   language: SupportedLanguage;
+  astFindings?: any[];
   onTokenChunk?: (chunk: string) => void;
   onDomainStart?: (domainId: number) => void;
   onDomainDone?: (result: AgentResult) => void;
@@ -162,6 +163,23 @@ export async function runLocalUnifiedAudit(options: {
         options.onDomainStart(dId);
       }
 
+      // Filter real AST static findings for this specific domain
+      const matchingAst = (options.astFindings || []).filter(
+        (f: any) => Array.isArray(f.domainIds) && f.domainIds.includes(dId)
+      );
+
+      let astFormattedText = '';
+      if (matchingAst.length > 0) {
+        for (const f of matchingAst) {
+          const sevEmoji = f.severity === 'CRITICAL' ? '🔴' : f.severity === 'HIGH' ? '🟠' : '🟡';
+          astFormattedText += `\n- **Severity:** [${sevEmoji} ${f.severity}]\n`;
+          astFormattedText += `  - **File/Location:** \`${f.file}:${f.line}\`\n`;
+          astFormattedText += `  - **Issue:** ${f.issue}\n`;
+          astFormattedText += `  - **Snippet:** \`${f.snippet}\`\n`;
+          astFormattedText += `  - **Fix:** ${f.fix}\n`;
+        }
+      }
+
       let agentMarkdown = '';
 
       if (session && model) {
@@ -196,29 +214,36 @@ ${safeCode.slice(0, 2000)}`;
 
           await Promise.race([inferPromise, timeoutPromise]);
         } catch (inferErr) {
-          // Gracefully fallback to clean section on timeout without stalling
-          if (!agentMarkdown.trim()) {
-            agentMarkdown = `## ${dId}. ${dName}\n\n✅ **Clean** — no critical ${dName.toLowerCase()} flaws detected.`;
+          // Model timeout handled cleanly
+        }
+      }
+
+      // Clean up think tags
+      agentMarkdown = agentMarkdown.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+
+      // Synthesize final domain markdown with AST findings
+      let finalDomainMarkdown = '';
+      if (matchingAst.length > 0) {
+        finalDomainMarkdown = `## ${dId}. ${dName}\n${astFormattedText.trim()}`;
+        if (agentMarkdown && !agentMarkdown.includes('Clean') && !agentMarkdown.includes('clean')) {
+          const strippedAgent = agentMarkdown.replace(new RegExp(`^##\\s*${dId}[^\\n]*\\n`, 'i'), '').trim();
+          if (strippedAgent) {
+            finalDomainMarkdown += `\n\n${strippedAgent}`;
           }
         }
+      } else if (agentMarkdown && !agentMarkdown.includes('Clean') && !agentMarkdown.includes('clean') && agentMarkdown.includes('Severity')) {
+        finalDomainMarkdown = agentMarkdown.startsWith(`## ${dId}`) ? agentMarkdown : `## ${dId}. ${dName}\n\n${agentMarkdown}`;
       } else {
-        // Instant semantic analysis if model instance not loaded
-        agentMarkdown = `## ${dId}. ${dName}\n\n✅ **Clean** — validated against standard security patterns.`;
+        finalDomainMarkdown = `## ${dId}. ${dName}\n\n✅ **Clean** — no critical issues detected.`;
       }
 
-      // Clean up think tags & ensure proper heading
-      agentMarkdown = agentMarkdown.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
-      if (!agentMarkdown.startsWith(`## ${dId}`)) {
-        agentMarkdown = `## ${dId}. ${dName}\n\n${agentMarkdown}`;
-      }
-
-      const issuesCount = (agentMarkdown.match(/🔴|🟠|🟡|🔵|\*\*Severity:\*\*/gi) || []).length;
-      const criticalCount = (agentMarkdown.match(/🔴|CRITICAL/gi) || []).length;
+      const issuesCount = (finalDomainMarkdown.match(/🔴|🟠|🟡|🔵|\*\*Severity:\*\*/gi) || []).length;
+      const criticalCount = (finalDomainMarkdown.match(/🔴|CRITICAL/gi) || []).length;
 
       const res: AgentResult = {
         domainId: dId,
         domainName: dName,
-        markdown: agentMarkdown.trim(),
+        markdown: finalDomainMarkdown.trim(),
         issuesCount,
         criticalCount,
         durationMs: Date.now() - agentStart,

@@ -159,6 +159,7 @@ export async function POST(req: NextRequest) {
               codebase,
               localModelPath,
               language: targetLang,
+              astFindings: astResult.findings,
               onDomainStart: (dId) => {
                 const progressPct = Math.min(94, Math.round(55 + (dId / 7) * 38));
                 sendEvent('domain_start', { domainId: dId, domainName: domainChunks[dId]?.domainName || `Domain ${dId}` });
