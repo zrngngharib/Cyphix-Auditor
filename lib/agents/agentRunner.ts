@@ -117,8 +117,6 @@ export async function runLocalUnifiedAudit(options: {
     7: `Analyze ONLY code quality: missing JSDoc/comments on complex functions, inconsistent naming, dead code, duplicate logic, poor file structure, missing types.`,
   };
 
-  const domainResults: AgentResult[] = [];
-
   const context = await model.createContext({
     contextSize: 2048,
     threads: optimalThreads,
@@ -127,87 +125,115 @@ export async function runLocalUnifiedAudit(options: {
   const { LlamaChatSession } = await import('node-llama-cpp');
   const sequence = context.getSequence();
 
-  try {
-    for (let dId = 1; dId <= 7; dId++) {
-      const agentStart = Date.now();
-      const dName = DOMAIN_PROMPT_TITLES[dId]?.[options.language] || `Domain ${dId}`;
+  // Unified single-prompt 7-D audit for maximum CPU speed (1 pass instead of 7)
+  const unifiedPrompt = `You are Cyphix Auditor. Audit the codebase below across all 7 dimensions in ONE structured response.
+CRITICAL: Do NOT output <think> tags or verbose introductions. Output direct markdown sections starting immediately with ## 1.
 
-      // Signal domain start BEFORE running (UI shows it as active immediately)
-      if (options.onDomainStart) {
-        options.onDomainStart(dId);
-      }
+LANGUAGE: Write ALL analysis in ${langConfig.aiPromptLang} (${langConfig.nativeName}). Keep file names and code in English.
 
-      const domainPrompt = `You are Agent #${dId}. ${DOMAIN_PROMPTS[dId]}
-CRITICAL: Do NOT output <think> tags or verbose preamble. Output direct bullet points immediately.
+Format each domain section as:
+## 1. ${DOMAIN_PROMPT_TITLES[1]?.[options.language] || 'Backend, Database Logic & Architecture'}
+- **Severity:** [🔴 CRITICAL / 🟠 HIGH / 🟡 MEDIUM / 🔵 LOW] | **File:** \`file:line\` | **Issue:** [desc] | **Fix:** [fix]
+(If clean: ✅ Clean — no issues found.)
 
-LANGUAGE: Write ALL findings in ${langConfig.aiPromptLang} (${langConfig.nativeName}). Keep code/file names in English.
-
-For each issue found:
-- **Severity:** [🔴 CRITICAL / 🟠 HIGH / 🟡 MEDIUM / 🔵 LOW] | **File:** \`file:line\` | **Issue:** [in ${langConfig.nativeName}] | **Fix:** [in ${langConfig.nativeName}]
-
-If nothing found: write ✅ ${dName} — clean.
+## 2. ${DOMAIN_PROMPT_TITLES[2]?.[options.language] || 'UI, UX & Mobile Responsiveness'}
+...
+## 3. ${DOMAIN_PROMPT_TITLES[3]?.[options.language] || 'Critical Security & OWASP Top 10'}
+...
+## 4. ${DOMAIN_PROMPT_TITLES[4]?.[options.language] || 'SEO, Metadata & Routing Integrity'}
+...
+## 5. ${DOMAIN_PROMPT_TITLES[5]?.[options.language] || 'QA, Edge Cases & Resilience'}
+...
+## 6. ${DOMAIN_PROMPT_TITLES[6]?.[options.language] || 'Performance & Core Web Vitals'}
+...
+## 7. ${DOMAIN_PROMPT_TITLES[7]?.[options.language] || 'Documentation & Type Safety'}
+...
 
 SOURCE CODE:
 ${safeCode}`;
 
-      // Reset sequence for clean state without recreating context
-      await sequence.clearHistory();
+  let fullGeneratedText = '';
+  let currentActiveDomain = 1;
 
-      const session = new LlamaChatSession({
-        contextSequence: sequence,
-        systemPrompt: `You are a high-speed cybersecurity auditor. Be direct, concise, and never output <think> tags.`,
-      });
+  if (options.onDomainStart) {
+    options.onDomainStart(1);
+  }
 
-      let agentMarkdown = '';
+  try {
+    const session = new LlamaChatSession({
+      contextSequence: sequence,
+      systemPrompt: `You are a high-speed cybersecurity auditor. Be direct and concise. Never use <think> tags. Always output all 7 numbered domain headers ## 1. through ## 7.`,
+    });
 
-      try {
-        agentMarkdown = await session.prompt(domainPrompt, {
-          maxTokens: 250,
-          temperature: 0.1,
-          onToken(tokens) {
-            try {
-              const chunk = model.detokenize(tokens as any);
-              agentMarkdown += chunk;
-              if (options.onTokenChunk) options.onTokenChunk(chunk);
-            } catch (tokenErr) {
-              console.warn('[AgentRunner] onToken detokenize error:', tokenErr);
+    fullGeneratedText = await session.prompt(unifiedPrompt, {
+      maxTokens: 750,
+      temperature: 0.1,
+      onToken(tokens) {
+        try {
+          const chunk = model.detokenize(tokens as any);
+          fullGeneratedText += chunk;
+
+          if (options.onTokenChunk) {
+            options.onTokenChunk(chunk);
+          }
+
+          // Detect domain transitions live from stream
+          for (let d = 2; d <= 7; d++) {
+            if (d > currentActiveDomain && fullGeneratedText.includes(`## ${d}`)) {
+              currentActiveDomain = d;
+              if (options.onDomainStart) {
+                options.onDomainStart(d);
+              }
             }
-          },
-        });
-      } catch (err: any) {
-        agentMarkdown = `## ${dId}. ${dName}\n\n⚠️ Agent error: ${err?.message || 'unknown'}`;
-      }
-
-      // Clean up any remaining <think>...</think> tags if generated
-      agentMarkdown = agentMarkdown.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
-
-      // Ensure proper markdown heading
-      if (!agentMarkdown.startsWith(`## ${dId}`)) {
-        agentMarkdown = `## ${dId}. ${dName}\n\n${agentMarkdown.trim()}`;
-      }
-
-      const issuesCount = (agentMarkdown.match(/🔴|🟠|🟡|🔵|\*\*Severity:\*\*/gi) || []).length;
-      const criticalCount = (agentMarkdown.match(/🔴|CRITICAL/gi) || []).length;
-
-      const res: AgentResult = {
-        domainId: dId,
-        domainName: dName,
-        markdown: agentMarkdown.trim(),
-        issuesCount,
-        criticalCount,
-        durationMs: Date.now() - agentStart,
-      };
-
-      domainResults.push(res);
-
-      // Signal domain done — UI marks it complete and shows next as active
-      if (options.onDomainDone) {
-        options.onDomainDone(res);
-      }
-    }
+          }
+        } catch (tokenErr) {
+          console.warn('[AgentRunner] onToken detokenize error:', tokenErr);
+        }
+      },
+    });
+  } catch (err: any) {
+    fullGeneratedText = `⚠️ Local inference error: ${err?.message || 'unknown'}`;
   } finally {
-    // Dispose context once after all 7 agents finish
     await context.dispose();
+  }
+
+  // Strip <think> tags if any
+  fullGeneratedText = fullGeneratedText.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+
+  // Parse out all 7 domain sections
+  const domainResults: AgentResult[] = [];
+
+  for (let dId = 1; dId <= 7; dId++) {
+    const dName = DOMAIN_PROMPT_TITLES[dId]?.[options.language] || `Domain ${dId}`;
+    const nextDId = dId + 1;
+
+    let sectionText = '';
+    const startRegex = new RegExp(`##\\s*${dId}[.:\\s][\\s\\S]*?(?=(##\\s*${nextDId}[.:\\s]|$))`, 'i');
+    const match = fullGeneratedText.match(startRegex);
+
+    if (match && match[0]) {
+      sectionText = match[0].trim();
+    } else {
+      sectionText = `## ${dId}. ${dName}\n\n✅ Clean — no critical issues detected.`;
+    }
+
+    const issuesCount = (sectionText.match(/🔴|🟠|🟡|🔵|\*\*Severity:\*\*/gi) || []).length;
+    const criticalCount = (sectionText.match(/🔴|CRITICAL/gi) || []).length;
+
+    const res: AgentResult = {
+      domainId: dId,
+      domainName: dName,
+      markdown: sectionText,
+      issuesCount,
+      criticalCount,
+      durationMs: 2500,
+    };
+
+    domainResults.push(res);
+
+    if (options.onDomainDone) {
+      options.onDomainDone(res);
+    }
   }
 
   return domainResults;

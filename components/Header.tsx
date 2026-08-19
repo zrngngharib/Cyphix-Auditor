@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     fetchModelStatus();
-    const interval = setInterval(fetchModelStatus, 4000);
+    const interval = setInterval(fetchModelStatus, 20000);
 
     const handleClickOutside = (event: MouseEvent) => {
       if (
