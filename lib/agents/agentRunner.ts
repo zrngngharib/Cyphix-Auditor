@@ -77,7 +77,7 @@ export async function getLocalModelSingleton(customPath?: string) {
 
   const { getLlama } = await import('node-llama-cpp');
   // Use CPU execution directly to ensure stable execution without running out of GPU VRAM (Vulkan)
-  cachedLlamaInstance = await getLlama({ gpu: false });
+  cachedLlamaInstance = await getLlama({ gpu: false, logLevel: 'error' as any });
   cachedModelInstance = await cachedLlamaInstance.loadModel({ modelPath: resolvedPath, gpuLayers: 0 });
   cachedModelFilePath = resolvedPath;
 
