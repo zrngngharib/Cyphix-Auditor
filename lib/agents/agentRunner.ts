@@ -2,28 +2,10 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { SupportedLanguage, LANGUAGES } from '@/lib/i18n';
 import { DomainChunk } from '@/lib/orchestrator/chunker';
 import { resolveLocalModelPath } from '@/lib/utils/modelPathResolver';
+import { AgentRunOptions, AgentResult } from '@/lib/types';
 import os from 'os';
 
-export interface AgentRunOptions {
-  domainId: number;
-  domainName: string;
-  chunk: DomainChunk;
-  provider: 'gemini' | 'claude' | 'deepseek-cloud' | 'local';
-  apiKey?: string;
-  modelName?: string;
-  localModelPath?: string;
-  language: SupportedLanguage;
-  onChunk?: (text: string) => void;
-}
-
-export interface AgentResult {
-  domainId: number;
-  domainName: string;
-  markdown: string;
-  issuesCount: number;
-  criticalCount: number;
-  durationMs: number;
-}
+export type { AgentRunOptions, AgentResult };
 
 const DOMAIN_PROMPT_TITLES: Record<number, Record<SupportedLanguage, string>> = {
   1: {
