@@ -135,8 +135,8 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
   // 1. KURDISH SORANI (کوردیی سۆرانی)
   // =========================================================================
   ckb: {
-    badge: 'دۆکیۆمێنتەیشنی تەواوی سیستەم // Quantix Docs',
-    heroTitle: 'ڕێنمایی و دۆکیۆمێنتەیشنی Quantix',
+    badge: 'دۆکیۆمێنتەیشنی تەواوی سیستەم // Cyphix Docs',
+    heroTitle: 'ڕێنمایی و دۆکیۆمێنتەیشنی Cyphix',
     heroSubtitle: 'ڕێبەری گشتگیر بۆ شیکاری سایبەری ٧-ڕەهەندی، مۆدێلە کلاودەکان و بزوێنەرە ناوخۆییە ئۆفلاینەکانی GGUF',
     navBack: 'گەڕانەوە بۆ سەرەتا',
     tableOfContents: 'پێڕستی بەشەکان',
@@ -153,7 +153,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       title: '١. تەلارسازی و شێوازی کارکردنی سیستەم',
       subtitle: 'چۆنیەتی بەڕێوەچوونی شیکاریی پڕۆژە لەناو بیرگەی خۆماڵی و ڕەوتی بریکارەکان',
       desc1:
-        'سیستەمی Quantix بە تەلارسازییەکی مۆدێرنی فرە-بریکار (Multi-Agent Architecture) داڕێژراوە. کاتێک فۆڵدەری پڕۆژەکەت دادەنێیت، تەواوی فایلەکان بە فلتەری تونددا دەڕۆن، فایلە زیادەکانی وەک node_modules و .git دەپاڵێورێن و کۆدەکان ڕاستەوخۆ لەناو بیرگەی RAM دەمێننەوە بێ ئەوەی لەسەر هیچ داتابەیسێک پاشەکەوت بکرێن.',
+        'سیستەمی Cyphix بە تەلارسازییەکی مۆدێرنی فرە-بریکار (Multi-Agent Architecture) داڕێژراوە. کاتێک فۆڵدەری پڕۆژەکەت دادەنێیت، تەواوی فایلەکان بە فلتەری تونددا دەڕۆن، فایلە زیادەکانی وەک node_modules و .git دەپاڵێورێن و کۆدەکان ڕاستەوخۆ لەناو بیرگەی RAM دەمێننەوە بێ ئەوەی لەسەر هیچ داتابەیسێک پاشەکەوت بکرێن.',
       pipelineTitle: 'ڕەوتی پاراستن و شیکاریی فرە-بریکار (Multi-Agent Pipeline)',
       pipelineBadge: '١٠٠٪ لەناو RAM دەمێنێتەوە',
       p1: {
@@ -266,7 +266,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       title: '٤. بزوێنەرە کلاودەکان (Cloud AI Engines)',
       subtitle: 'بەستنەوە بە بەهێزترین مۆدێلە جیهانییەکان بۆ پڕۆژە زۆر گەورەکان بە کلیل',
       desc:
-        'ئەگەر پڕۆژەکەت زۆر گەورەیە (دەیان هەزار دێڕ کۆد) و دەتەوێت لە چەند چرکەیەکی کەمدا لە ڕێگەی کلاودەوە شیکاری بۆ بکرێت، Quantix سێ بزوێنەری کلاودی پێشەنگ دابین دەکات:',
+        'ئەگەر پڕۆژەکەت زۆر گەورەیە (دەیان هەزار دێڕ کۆد) و دەتەوێت لە چەند چرکەیەکی کەمدا لە ڕێگەی کلاودەوە شیکاری بۆ بکرێت، Cyphix سێ بزوێنەری کلاودی پێشەنگ دابین دەکات:',
       engines: [
         {
           name: 'Google Gemini',
@@ -341,7 +341,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     },
     sec6: {
       title: '٦. دۆکیۆمێنتەیشنی فەرمی API و خزمەتگوزارییەکان',
-      subtitle: 'بەستنەوەی Quantix بە پرۆسەی CI/CD یان کۆنسۆڵی تێرمینال لە ڕێگەی HTTP API',
+      subtitle: 'بەستنەوەی Cyphix بە پرۆسەی CI/CD یان کۆنسۆڵی تێرمینال لە ڕێگەی HTTP API',
       desc: 'سیستەمەکە دوو ڕێڕەوی ستانداردی سەرڤەرلێس بۆ شیکاری دابین دەکات:',
       endpointPost: 'POST /api/audit — شیکاری یەکجارەکی لەگەڵ وەڵامدانەوەی JSON',
       endpointStream: 'POST /api/audit/stream — پەخشی ڕاستەوخۆ بە Server-Sent Events (SSE)',
@@ -349,7 +349,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     sec7: {
       title: '٧. ئاسایش، مەرجەکانی تایبەتمەندی و SOC 2',
       subtitle: 'چۆن دڵنیادەبینەوە لەوەی هیچ داتایەکی کۆدبەیسەکەت دزە ناکات؟',
-      desc: 'Quantix بە یاسای Privacy by Design دروستکراوە بەم تایبەتمەندییە توندانە:',
+      desc: 'Cyphix بە یاسای Privacy by Design دروستکراوە بەم تایبەتمەندییە توندانە:',
       points: [
         {
           title: 'هیچ فایلێک لەسەر دیسک پاشەکەوت ناکرێت',
@@ -371,7 +371,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       faqs: [
         {
           q: 'ئایا پێویستم بە کارتی گرافیکی بەهێز (GPU) هەیە بۆ بەکارهێنانی مۆدێلە ئۆفلاینەکان؟',
-          a: 'نەخێر! Quantix بە تەواوی بۆ CPU و ڕامی ئاسایی کەمکراوەتەوە. تەنانەت بە کۆمپیوتەرێکی ئاسایی بە ٨ یان ١٦ گێگابایت ڕام دەتوانیت بە باشترین شێوە پشکنین ئەنجام بدەیت.',
+          a: 'نەخێر! Cyphix بە تەواوی بۆ CPU و ڕامی ئاسایی کەمکراوەتەوە. تەنانەت بە کۆمپیوتەرێکی ئاسایی بە ٨ یان ١٦ گێگابایت ڕام دەتوانیت بە باشترین شێوە پشکنین ئەنجام بدەیت.',
         },
         {
           q: 'جیاوازی سەرەکی نێوان DeepSeek-R1 و Qwen-Coder چییە؟',
@@ -393,8 +393,8 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
   // 2. KURDISH BADINI (کوردییا بادینی)
   // =========================================================================
   badini: {
-    badge: 'دۆکیۆمێنتەیشنا تەمام یا سیستەمی // Quantix Docs',
-    heroTitle: 'ڕێبەر و دۆکیۆمێنتەیشنا Quantix',
+    badge: 'دۆکیۆمێنتەیشنا تەمام یا سیستەمی // Cyphix Docs',
+    heroTitle: 'ڕێبەر و دۆکیۆمێنتەیشنا Cyphix',
     heroSubtitle: 'ڕێبەرێ گشتگیر بۆ شیکاریا سایبەری یا ٧-ڕەهەندی، مۆدێلێن کلاود و بزوێنەرێن ناڤخۆیی یێن ئۆفلاین GGUF',
     navBack: 'زڤرین بۆ دەستپێکێ',
     tableOfContents: 'پێڕستێ بەشان',
@@ -411,7 +411,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       title: '١. تەلارسازی و شێوازێ کارکرنا سیستەمی',
       subtitle: 'چەوانیا بڕێڤەچوونا شیکاریا پرۆژەی د ناڤ بیرگەها ناڤخۆیی و ڕەوتێ بریکاران دا',
       desc1:
-        'سیستەمێ Quantix ب تەلارسازیەکا مۆدێرن یا فرە-بریکار (Multi-Agent Architecture) هاتیە چێکرن. دەمێ تو فۆڵدەرێ پرۆژەیێ خۆ دادەنێی، هەمی فایل ب فلتەرەکێ توند دا دەرباز دبن و ڕاستەوخۆ د ناڤ بیرگەها RAM دا دمینن بێی کو ل سەر چ داتابەیسان بهێنە هەلگرتن.',
+        'سیستەمێ Cyphix ب تەلارسازیەکا مۆدێرن یا فرە-بریکار (Multi-Agent Architecture) هاتیە چێکرن. دەمێ تو فۆڵدەرێ پرۆژەیێ خۆ دادەنێی، هەمی فایل ب فلتەرەکێ توند دا دەرباز دبن و ڕاستەوخۆ د ناڤ بیرگەها RAM دا دمینن بێی کو ل سەر چ داتابەیسان بهێنە هەلگرتن.',
       pipelineTitle: 'ڕەوتێ پاراستن و شیکاریا فرە-بریکار (Multi-Agent Pipeline)',
       pipelineBadge: '١٠٠٪ د ناڤ RAM دا دمینیت',
       p1: {
@@ -598,7 +598,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     },
     sec6: {
       title: '٦. دۆکیۆمێنتەیشنا فەرمی یا API',
-      subtitle: 'گرێدانا Quantix ب پرۆسەیێن CI/CD ب ڕێکا HTTP API',
+      subtitle: 'گرێدانا Cyphix ب پرۆسەیێن CI/CD ب ڕێکا HTTP API',
       desc: 'دوو ڕێڕەوێن سەرڤەرلێس بەردەستن:',
       endpointPost: 'POST /api/audit — شیکاریا ئێکسەر ب وەڵاما JSON',
       endpointStream: 'POST /api/audit/stream — پەخشی ڕاستەوخۆ ب SSE',
@@ -628,7 +628,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       faqs: [
         {
           q: 'ئەرێ پێدڤی ب GPUەکا ب هێز هەیە بۆ مۆدێلێن ئۆفلاین؟',
-          a: 'نەخێر! Quantix ب تەواوی بۆ CPU و ڕاما ئاسایی هاتیە گونجاندن.',
+          a: 'نەخێر! Cyphix ب تەواوی بۆ CPU و ڕاما ئاسایی هاتیە گونجاندن.',
         },
         {
           q: 'جوداهیا سەرەکی یا DeepSeek-R1 و Qwen-Coder چییە؟',
@@ -650,8 +650,8 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
   // 3. ENGLISH (US)
   // =========================================================================
   en: {
-    badge: 'Comprehensive System Architecture & Technical Manual // Quantix Docs',
-    heroTitle: 'Quantix Documentation & Engine Manual',
+    badge: 'Comprehensive System Architecture & Technical Manual // Cyphix Docs',
+    heroTitle: 'Cyphix Documentation & Engine Manual',
     heroSubtitle: 'Comprehensive technical guide for 7-Dimensional cybersecurity auditing, cloud LLM engines, and local offline GGUF inference',
     navBack: 'Back to Home',
     tableOfContents: 'Table of Contents',
@@ -668,7 +668,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       title: '1. System Architecture & Execution Pipeline',
       subtitle: 'Client-isolated AST pre-scanning and multi-agent pipeline mechanics',
       desc1:
-        'Quantix is built upon a high-concurrency multi-agent architecture. When you upload or drag a project directory, files undergo immediate AST filtering. Temporary artifacts like node_modules, build caches, and .git folders are eliminated in-memory, leaving source code safely evaluated in RAM without ever touching persistent server databases.',
+        'Cyphix is built upon a high-concurrency multi-agent architecture. When you upload or drag a project directory, files undergo immediate AST filtering. Temporary artifacts like node_modules, build caches, and .git folders are eliminated in-memory, leaving source code safely evaluated in RAM without ever touching persistent server databases.',
       pipelineTitle: 'Multi-Agent Security & Evaluation Pipeline',
       pipelineBadge: '100% In-Memory Isolation',
       p1: {
@@ -705,7 +705,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
         {
           step: 1,
           title: 'Drag & Drop Codebase Folder',
-          desc: 'Drop your source project directory into the upload zone. Quantix instantly maps and summarizes lines of code, file counts, and architecture hierarchy in memory.',
+          desc: 'Drop your source project directory into the upload zone. Cyphix instantly maps and summarizes lines of code, file counts, and architecture hierarchy in memory.',
         },
         {
           step: 2,
@@ -780,7 +780,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     sec4: {
       title: '4. Cloud AI Engines & API Credentials',
       subtitle: 'Massive context windows and global reasoning for massive enterprise repositories',
-      desc: 'For enterprise codebases spanning tens of thousands of lines, Quantix supports three leading cloud intelligence engines:',
+      desc: 'For enterprise codebases spanning tens of thousands of lines, Cyphix supports three leading cloud intelligence engines:',
       engines: [
         {
           name: 'Google Gemini',
@@ -855,15 +855,15 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     },
     sec6: {
       title: '6. Official API Reference & Programmatic Integration',
-      subtitle: 'Integrate Quantix into CI/CD pipelines, pre-commit hooks, or external developer tools',
-      desc: 'Quantix provides two serverless REST endpoints for seamless automation:',
+      subtitle: 'Integrate Cyphix into CI/CD pipelines, pre-commit hooks, or external developer tools',
+      desc: 'Cyphix provides two serverless REST endpoints for seamless automation:',
       endpointPost: 'POST /api/audit — Single-shot synchronous audit returning full JSON report',
       endpointStream: 'POST /api/audit/stream — Reactive Server-Sent Events (SSE) live stream',
     },
     sec7: {
       title: '7. Security, Compliance & Air-Gapped Guarantees',
       subtitle: 'Built from the ground up for strict confidentiality and data protection',
-      desc: 'Quantix implements zero-trust architecture principles across all layers:',
+      desc: 'Cyphix implements zero-trust architecture principles across all layers:',
       points: [
         {
           title: 'Zero Persistent Disk Storage',
@@ -885,7 +885,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       faqs: [
         {
           q: 'Do I need a dedicated GPU to run offline models?',
-          a: 'No. Quantix is engineered to run via multi-threaded CPU instructions and system RAM. Standard PCs and laptops with 8GB to 16GB RAM can execute audits smoothly.',
+          a: 'No. Cyphix is engineered to run via multi-threaded CPU instructions and system RAM. Standard PCs and laptops with 8GB to 16GB RAM can execute audits smoothly.',
         },
         {
           q: 'What is the difference between DeepSeek-R1 and Qwen2.5-Coder?',
@@ -907,8 +907,8 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
   // 4. ARABIC (العربية الفصحى)
   // =========================================================================
   ar: {
-    badge: 'دليل النظام والتوثيق الهندسي // Quantix Docs',
-    heroTitle: 'توثيق ودليل محرك Quantix',
+    badge: 'دليل النظام والتوثيق الهندسي // Cyphix Docs',
+    heroTitle: 'توثيق ودليل محرك Cyphix',
     heroSubtitle: 'دليل شامل للتقييم السيبراني سباعي الأبعاد، نماذج السحابة الذكية، ونماذج GGUF المحلية غير المتصلة',
     navBack: 'العودة للرئيسية',
     tableOfContents: 'فهرس المحتويات',
@@ -925,7 +925,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       title: '١. البنية الهندسية ومسار المعالجة',
       subtitle: 'آلية الفحص المسبق السريع وعمل الوكلاء المتخصصين داخل الذاكرة',
       desc1:
-        'تم بناء Quantix وفق بنية برمجية متطورة متعددة الوكلاء (Multi-Agent Architecture). عند إدراج مجلد المشروع، تخضع الملفات لفرز مباشر لاستبعاد الملفات المؤقتة مثل node_modules و .git، وتبقى الشيفرات محفوظة في ذاكرة RAM المؤقتة دون تخزينها في أي قواعد بيانات على الخادم.',
+        'تم بناء Cyphix وفق بنية برمجية متطورة متعددة الوكلاء (Multi-Agent Architecture). عند إدراج مجلد المشروع، تخضع الملفات لفرز مباشر لاستبعاد الملفات المؤقتة مثل node_modules و .git، وتبقى الشيفرات محفوظة في ذاكرة RAM المؤقتة دون تخزينها في أي قواعد بيانات على الخادم.',
       pipelineTitle: 'مسار الأمان والتحليل متعدد الوكلاء (Multi-Agent Pipeline)',
       pipelineBadge: '١٠٠٪ معزول في الذاكرة المؤقتة',
       p1: {
@@ -1037,7 +1037,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     sec4: {
       title: '٤. محركات الذكاء الاصطناعي السحابية (Cloud AI Engines)',
       subtitle: 'أعلى سرعة ونطاق سياق واسع للمشاريع الضخمة عبر مفاتيح API',
-      desc: 'للمشاريع التي تضم عشرات آلاف أسطر الشيفرات البرمجية، يوفر Quantix دعماً لثلاثة محركات سحابية رائدة:',
+      desc: 'للمشاريع التي تضم عشرات آلاف أسطر الشيفرات البرمجية، يوفر Cyphix دعماً لثلاثة محركات سحابية رائدة:',
       engines: [
         {
           name: 'Google Gemini',
@@ -1112,7 +1112,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     },
     sec6: {
       title: '٦. توثيق واجهة البرمجة الرسمية (API Reference)',
-      subtitle: 'ربط Quantix مع بيئات العمل وخطوط الإنتاج (CI/CD) عبر REST API',
+      subtitle: 'ربط Cyphix مع بيئات العمل وخطوط الإنتاج (CI/CD) عبر REST API',
       desc: 'يوفر النظام مسارين خادميين للتشغيل الآلي:',
       endpointPost: 'POST /api/audit — فحص متزامن يعيد تقريراً كاملاً بصيغة JSON',
       endpointStream: 'POST /api/audit/stream — بث تفاعلي للأحداث عبر تقنية SSE',
@@ -1164,8 +1164,8 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
   // 5. PERSIAN (فارسی)
   // =========================================================================
   fa: {
-    badge: 'مستندات جامع سیستم و راهنمای فنی // Quantix Docs',
-    heroTitle: 'مستندات و راهنمای جامع موتور Quantix',
+    badge: 'مستندات جامع سیستم و راهنمای فنی // Cyphix Docs',
+    heroTitle: 'مستندات و راهنمای جامع موتور Cyphix',
     heroSubtitle: 'راهنمای تخصصی ارزیابی امنیت سایبری ۷ بعدی، موتورهای ابری و هوش مصنوعی محلی آفلاین GGUF',
     navBack: 'بازگشت به صفحه اصلی',
     tableOfContents: 'فهرست بخش‌ها',
@@ -1182,7 +1182,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       title: '۱. معماری سیستم و پایپ‌لاین ارزیابی',
       subtitle: 'مکانیسم اسکن سریع AST و پایپ‌لاین چند عاملی در حافظه موقت مرورگر',
       desc1:
-        'موتور Quantix بر پایه یک معماری چند عاملی پیشرفته (Multi-Agent) ساخته شده است. با بارگذاری پوشه پروژه، فایل‌ها به سرعت فیلتر شده و مواردی چون node_modules و .git حذف می‌شوند. کدها به صورت ایزوله ۱۰۰٪ در رم پردازش شده و هرگز روی هیچ دیتابیسی ذخیره نمی‌شوند.',
+        'موتور Cyphix بر پایه یک معماری چند عاملی پیشرفته (Multi-Agent) ساخته شده است. با بارگذاری پوشه پروژه، فایل‌ها به سرعت فیلتر شده و مواردی چون node_modules و .git حذف می‌شوند. کدها به صورت ایزوله ۱۰۰٪ در رم پردازش شده و هرگز روی هیچ دیتابیسی ذخیره نمی‌شوند.',
       pipelineTitle: 'پایپ‌لاین امنیت و پردازش چند عاملی (Multi-Agent Pipeline)',
       pipelineBadge: '۱۰۰٪ ایزوله در حافظه RAM',
       p1: {
@@ -1294,7 +1294,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
     sec4: {
       title: '۴. موتورهای هوش مصنوعی ابری (Cloud AI Engines)',
       subtitle: 'پنجره زمینه بسیار وسیع برای ممیزی کدهای بسیار حجیم شرکتی',
-      desc: 'برای پروژه‌های بزرگ با ده‌ها هزار خط کد، Quantix از سه موتور هوش مصنوعی قدرتمند پشتیبانی می‌کند:',
+      desc: 'برای پروژه‌های بزرگ با ده‌ها هزار خط کد، Cyphix از سه موتور هوش مصنوعی قدرتمند پشتیبانی می‌کند:',
       engines: [
         {
           name: 'Google Gemini',
@@ -1399,7 +1399,7 @@ export const DOCS_CONTENT: Record<SupportedLanguage, DocsData> = {
       faqs: [
         {
           q: 'آیا برای مدل‌های آفلاین به کارت گرافیک قوی نیاز دارم؟',
-          a: 'خیر! Quantix برای اجرا روی پردازنده اصلی (CPU) و رم معمولی بهینه‌سازی شده و با ۸ تا ۱۶ گیگابایت رم عملکردی عالی دارد.',
+          a: 'خیر! Cyphix برای اجرا روی پردازنده اصلی (CPU) و رم معمولی بهینه‌سازی شده و با ۸ تا ۱۶ گیگابایت رم عملکردی عالی دارد.',
         },
         {
           q: 'تفاوت اصلی DeepSeek-R1 و Qwen-Coder در چیست؟',

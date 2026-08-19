@@ -253,12 +253,16 @@ export const AboutDocsModal: React.FC<AboutDocsModalProps> = ({
           </div>
         )}
 
-        {/* Footer Button */}
-        <div className="pt-3 border-t border-slate-100 flex justify-end">
+        {/* Footer & License Notice */}
+        <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-[11px] text-slate-500 font-sans">
+          <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
+            <Shield className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+            <span>© 2026 <strong>Zrng Nawroz Gharib</strong>. All Rights Reserved. (Non-Commercial Evaluation Only).</span>
+          </div>
           <button
             type="button"
             onClick={onClose}
-            className="min-h-[40px] px-6 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors"
+            className="min-h-[38px] px-6 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs transition-colors shrink-0"
           >
             {t('closeBtn')}
           </button>

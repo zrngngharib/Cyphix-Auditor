@@ -284,7 +284,7 @@ class DownloadManager {
       const client = isHttps ? https : http;
 
       const headers: Record<string, string> = {
-        'User-Agent': 'Quantix-Codebase-Auditor/1.0 (Mozilla/5.0; Windows NT 10.0; Win64; x64)',
+        'User-Agent': 'Cyphix-Codebase-Auditor/1.0 (Mozilla/5.0; Windows NT 10.0; Win64; x64)',
         Accept: '*/*',
       };
 
@@ -523,12 +523,12 @@ class DownloadManager {
 
 // Global Singleton to maintain state across Next.js API route invocations
 declare global {
-  var __quantixModelDownloader: DownloadManager | undefined;
+  var __cyphixModelDownloader: DownloadManager | undefined;
 }
 
-if (!global.__quantixModelDownloader) {
-  global.__quantixModelDownloader = new DownloadManager();
+if (!global.__cyphixModelDownloader) {
+  global.__cyphixModelDownloader = new DownloadManager();
 }
 
-export const modelDownloader = global.__quantixModelDownloader;
+export const modelDownloader = global.__cyphixModelDownloader;
 export { formatBytes, formatSpeed, formatEta };

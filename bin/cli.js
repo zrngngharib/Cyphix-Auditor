@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * Quantix Auditor - Command Line Interface (CLI)
+ * Cyphix Auditor v1.0.0 - Command Line Interface (CLI)
  * 7-Dimensional Multi-Agent Codebase & Cybersecurity Auditor
+ * Copyright (c) 2026 Zrng Nawroz Gharib. All Rights Reserved.
  */
 
 const fs = require('fs');
@@ -44,7 +45,7 @@ function parseArgs() {
     offline: false,
     localModel: '',
     format: 'markdown',
-    output: 'Quantix-Audit-Report.md',
+    output: 'Cyphix-Audit-Report.md',
     lang: 'en',
     threshold: '',
   };
@@ -155,7 +156,7 @@ async function main() {
   const targetDir = path.resolve(process.cwd(), options.targetPath);
 
   console.log(`\n${colors.bright}${colors.cyan}╔══════════════════════════════════════════════════════════════════╗${colors.reset}`);
-  console.log(`${colors.bright}${colors.cyan}║   🛡️  Quantix Auditor — Multi-Agent 7-D Cybersecurity CLI       ║${colors.reset}`);
+  console.log(`${colors.bright}${colors.cyan}║   🛡️  Cyphix Auditor v1.0.0 — Multi-Agent Cybersecurity CLI     ║${colors.reset}`);
   console.log(`${colors.bright}${colors.cyan}╚══════════════════════════════════════════════════════════════════╝${colors.reset}\n`);
 
   if (!fs.existsSync(targetDir)) {
@@ -201,7 +202,7 @@ async function main() {
 
   // Generate Executive Markdown Report
   const timestamp = new Date().toISOString();
-  const report = `# Quantix 7-Dimensional Codebase Security Audit Report
+  const report = `# Cyphix 7-Dimensional Codebase Security Audit Report (v1.0.0)
 
 **Executive Health Score:** \`${score}/100\`
 - **Audited Directory:** \`${options.targetPath}\` (${files.length} files, ${totalLines} lines)
@@ -234,7 +235,7 @@ ${criticals > 0 ? `⚠️ **Attention Required:** Found ${criticals} potential c
 ✅ **Clean** — Strict TypeScript typings and structured observability verified.
 
 ---
-*Report generated automatically by [Quantix Auditor](https://github.com/zrngngharib/Quantix-Auditor).*
+*Report generated automatically by [Cyphix Auditor v1.0.0](https://github.com/zrngngharib/Quantix-Auditor).*
 `;
 
   // Write output

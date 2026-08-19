@@ -1,10 +1,12 @@
 {
-  "name": "quantix-auditor",
+  "name": "cyphix-auditor",
   "version": "1.0.0",
-  "description": "AI Multi-Agent 7-Dimensional Codebase & Cybersecurity Auditor (In-Memory RAM Isolation & Local Offline GGUF)",
+  "description": "Cyphix — AI Multi-Agent 7-Dimensional Codebase & Cybersecurity Auditor (100% In-Memory RAM & Local Offline GGUF)",
+  "author": "Zrng Nawroz Gharib <info@zrngnawroz.xyz>",
+  "license": "SEE LICENSE IN LICENSE",
   "bin": {
-    "quantix": "./bin/cli.js",
-    "quantix-auditor": "./bin/cli.js"
+    "cyphix": "./bin/cli.js",
+    "cyphix-auditor": "./bin/cli.js"
   },
   "scripts": {
     "dev": "next dev",

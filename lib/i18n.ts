@@ -64,7 +64,7 @@ export const translations = {
   // =========================================================================
   ckb: {
     // Header & Nav
-    appName: 'Quantix // Auditor',
+    appName: 'Cyphix // Auditor',
     appSubtitle: 'پشکنەری ژیری دەستکرد بۆ ئاسایشی کۆد و پڕۆژە',
     engineStatus: 'سیستەم ئامادەیە',
     skipToContent: 'پەڕینەوە بۆ بەشی سەرەکی',
@@ -111,11 +111,11 @@ export const translations = {
     docsPrivacy: 'پاراستنی نهێنی (Privacy by Design):',
     docsPrivacyDesc: 'هیچ فایل یان شیفرەیەک لەسەر هیچ سێرڤەرێکی دەرەکی هەڵناگیرێت، و تەواوی پرۆسەکە لەناو ئامێری بەکارهێنەر کۆتایی دێت.',
     docsOpenFullPortal: 'کردنەوەی دۆکیۆمێنتەیشن و ڕێنمایی تەواو',
-    aboutTitle: 'دەربارەی Quantix Codebase Auditor',
+    aboutTitle: 'دەربارەی Cyphix Codebase Auditor',
     aboutSubtitle: 'سیستەمی فرە-بریکاری زیرەک بۆ شیکاری سایبەری و هەڵسەنگاندنی کۆد',
     aboutDesc: 'پلاتفۆرمێکی پێشکەوتووی شیکاری سایبەری و هەڵسەنگاندنی ئەندازیاری کۆدە بە بەکارهێنانی فرە-بریکاری ژیری دەستکرد. سیستەمەکە بە وردی کێشە و کەلێنە مەترسیدارەکانی OWASP Top 10، باکێند، UI/UX، سێئۆ، و خێرایی دەستنیشان دەکات پێش بڵاوکردنەوەی پڕۆژە لە بەرهەمهێناندا (Production).',
-    aboutWhyTitle: 'بۆچی Quantix لە سەردەمی Vibe Coding و ژیری دەستکرددا گرنگە؟',
-    aboutWhyDesc: 'لە سەردەمی ئەمڕۆدا کە بەکارهێنانی ئامرازەکانی ژیری دەستکرد و شێوازی Vibe Coding وایکردووە هەزاران دێڕ کۆد بە چەند چرکەیەک دروستبکرێن، مەترسییەکی گەورە لە کەلێنی ئاسایش (OWASP Top 10)، هەڵەی باکێند و دزەکردنی نهێنییەکان دروستبووە. Quantix وەک قەڵغانێکی پارێزەر دروستکرا تا بە ٧ بریکاری پسپۆڕ و بە شێوەیەکی ١٠٠٪ نهێنی لەناو RAM کۆدەکان بپشکنێت پێش ئەوەی بگەنە بەرهەمهێنان.',
+    aboutWhyTitle: 'بۆچی Cyphix لە سەردەمی Vibe Coding و ژیری دەستکرددا گرنگە؟',
+    aboutWhyDesc: 'لە سەردەمی ئەمڕۆدا کە بەکارهێنانی ئامرازەکانی ژیری دەستکرد و شێوازی Vibe Coding وایکردووە هەزاران دێڕ کۆد بە چەند چرکەیەک دروستبکرێن، مەترسییەکی گەورە لە کەلێنی ئاسایش (OWASP Top 10)، هەڵەی باکێند و دزەکردنی نهێنییەکان دروستبووە. Cyphix وەک قەڵغانێکی پارێزەر دروستکرا تا بە ٧ بریکاری پسپۆڕ و بە شێوەیەکی ١٠٠٪ نهێنی لەناو RAM کۆدەکان بپشکنێت پێش ئەوەی بگەنە بەرهەمهێنان.',
     aboutCreatorTitle: 'دەربارەی پەرەپێدەر و خاوەنی پڕۆژە',
     aboutCreatorName: 'زرنگ نەورۆز غەریب (Zrng Nawroz Gharib)',
     aboutCreatorRole: 'ئەندازیاری نەرمەکاڵا (١٦+ ساڵ ئەزموون)',
@@ -303,7 +303,7 @@ export const translations = {
 
     // Documentation Portal
     docsPortalBadge: '✦ بنکەی زانیاری فەرمی و ئەندازیاری QUANTIX // ARCHITECTURE & GUIDES ✦',
-    docsHeroTitle: 'دۆکیۆمێنتەیشن و ڕێنمایی ئەندازیاری Quantix',
+    docsHeroTitle: 'دۆکیۆمێنتەیشن و ڕێنمایی ئەندازیاری Cyphix',
     docsHeroSubtitle: 'ڕێنمایی تەواوی تەکنیکی بۆ پشکنینی پڕۆژە، کارپێکردنی مۆدێلە ناوخۆییەکانی GGUF، ڕێکخستنی کلاود و شیکاری سایبەری ٧-ڕەهەندی بەبێ دزەکردنی داتا.',
     docsSearchPlaceholder: 'گەڕان لە بەشەکان، ڕێنماییەکان، API، کلیلەکان و باسی تەوەرەکان...',
     docsNavBackToApp: 'گەڕانەوە بۆ پشکنەر (Auditor)',
@@ -339,7 +339,7 @@ export const translations = {
   // =========================================================================
   badini: {
     // Header & Nav
-    appName: 'Quantix // Auditor',
+    appName: 'Cyphix // Auditor',
     appSubtitle: 'پشکنەرێ ژیرییا دەستکرد بۆ پاراستنا کۆدی و پرۆژەی',
     engineStatus: 'سیستەم بەرهەڤە',
     skipToContent: 'دەربازبوون بۆ بەشێ سەرەکی',
@@ -386,11 +386,11 @@ export const translations = {
     docsPrivacy: 'پاراستنا نهێنیێ (Privacy by Design):',
     docsPrivacyDesc: 'چ فایل یان شیفرە ل سەر چ سێرڤەرێن دەرەکی ناهێنە پاراستن، و هەمی پێڤاژۆ د ئامیرێ تە دا بدووماهیك دهێت.',
     docsOpenFullPortal: 'ڤەکرنا دۆکیۆمێنتەیشن و ڕێبەریا تەمام',
-    aboutTitle: 'دەربارەی Quantix Codebase Auditor',
+    aboutTitle: 'دەربارەی Cyphix Codebase Auditor',
     aboutSubtitle: 'سیستەمێ فرە-بریکارێ زیرەک بۆ شیکاریا سایبەری و هەلسەنگاندنا کۆدی',
     aboutDesc: 'پلاتفۆرمەکێ پێشکەفتی یێ شیکاریا سایبەری و هەلسەنگاندنا ئەندازیارییا کۆدی یە ب بکارئینانا فرە-بریکارێن ژیرییا دەستکرد. سیستەم ب هویربینی کێماسیێن مەترسیدار یێن OWASP Top 10، باکێند، UI/UX، سێئۆ و لەزاتیێ دیار دکەت بەری بەلاڤکرنا پرۆژەی د بەرهەمهێنانێ دا (Production).',
-    aboutWhyTitle: 'بۆچی Quantix د سەردەمێ Vibe Coding و AIێ دا یا گرنگە؟',
-    aboutWhyDesc: 'د سەردەمێ ئەڤرۆ دا کو بکارئینانا ئامرازێن AI و شێوازێ Vibe Coding وای لێکریە ب هزاران دێڕێن کۆدی د چەند چرکەیان دا بهێنە چێکرن، مەترسیەکا مەزن یا کێماسیێن ئاسایشێ (OWASP Top 10)، شاشیێن باکێندی و دزەکرنا کلیلێن نهێنی دروست بوویە. Quantix وەکی قەلغانەکێ پارێزەر هاتیە چێکرن دا کو ب ٧ بریکارێن پسپۆر و ب شێوەیەکێ ١٠٠٪ نهێنی د ناڤ RAMێ دا کۆدان بپشکنیت بەری بەلاڤکرنێ.',
+    aboutWhyTitle: 'بۆچی Cyphix د سەردەمێ Vibe Coding و AIێ دا یا گرنگە؟',
+    aboutWhyDesc: 'د سەردەمێ ئەڤرۆ دا کو بکارئینانا ئامرازێن AI و شێوازێ Vibe Coding وای لێکریە ب هزاران دێڕێن کۆدی د چەند چرکەیان دا بهێنە چێکرن، مەترسیەکا مەزن یا کێماسیێن ئاسایشێ (OWASP Top 10)، شاشیێن باکێندی و دزەکرنا کلیلێن نهێنی دروست بوویە. Cyphix وەکی قەلغانەکێ پارێزەر هاتیە چێکرن دا کو ب ٧ بریکارێن پسپۆر و ب شێوەیەکێ ١٠٠٪ نهێنی د ناڤ RAMێ دا کۆدان بپشکنیت بەری بەلاڤکرنێ.',
     aboutCreatorTitle: 'دەربارەی گەشەپێدەر و خودانێ پرۆژەی',
     aboutCreatorName: 'زرنگ نەورۆز غەریب (Zrng Nawroz Gharib)',
     aboutCreatorRole: 'ئەندازیارێ بەرنامەسازیێ (١٦+ سالێن ئەزموونێ)',
@@ -578,7 +578,7 @@ export const translations = {
 
     // Documentation Portal
     docsPortalBadge: '✦ داتابەیسا فەرمی یا زانیاری و ئەندازیارییا QUANTIX // ARCHITECTURE & GUIDES ✦',
-    docsHeroTitle: 'دۆکیۆمێنتەیشن و ڕێبەریا ئەندازیاری یا Quantix',
+    docsHeroTitle: 'دۆکیۆمێنتەیشن و ڕێبەریا ئەندازیاری یا Cyphix',
     docsHeroSubtitle: 'ڕێبەریا تەمام یا تەکنیکی بۆ پشکنینا پرۆژەی، بکارئینانا مۆدێلێن ناڤخۆیی یێن GGUF، ڕێکخستنا کلاود و پشکنینا سایبەری یا ٧-ڕەهەندی بێی دزەکرنا داتایان.',
     docsSearchPlaceholder: 'گەڕیان د بەشان، ڕێنماییا، API، کلیلا و تەوەراندا...',
     docsNavBackToApp: 'زڤرین بۆ پشکنەرێ (Auditor)',
@@ -614,7 +614,7 @@ export const translations = {
   // =========================================================================
   en: {
     // Header & Nav
-    appName: 'Quantix // Auditor',
+    appName: 'Cyphix // Auditor',
     appSubtitle: 'AI Multi-Agent Codebase & Cybersecurity Auditor',
     engineStatus: 'System Ready',
     skipToContent: 'Skip to main content',
@@ -653,7 +653,7 @@ export const translations = {
     docsTitle: 'Documentation & Architecture Guide',
     docsSubtitle: 'Comprehensive technical guide for codebase cybersecurity audits',
     docsHowItWorks: 'How the 7-Dimensional Analysis Works:',
-    docsHowItWorksDesc: 'Quantix scans your repository in client RAM, automatically filtering out noise (node_modules, .git, .env.local) and passes eligible source files to 7 specialized evaluation agents simultaneously.',
+    docsHowItWorksDesc: 'Cyphix scans your repository in client RAM, automatically filtering out noise (node_modules, .git, .env.local) and passes eligible source files to 7 specialized evaluation agents simultaneously.',
     docsCloud: '1. Cloud AI Engines:',
     docsCloudDesc: 'Integrates with frontier models including Google Gemini 2.5 Flash/Pro, Anthropic Claude 3.5 Sonnet, and DeepSeek Cloud.',
     docsLocal: '2. Local Offline LLM (Air-Gapped):',
@@ -661,11 +661,11 @@ export const translations = {
     docsPrivacy: 'Privacy by Design:',
     docsPrivacyDesc: 'Zero source code or API keys are stored on any database or persistent disk. Everything flushes immediately upon tab closure.',
     docsOpenFullPortal: 'Open Full Documentation Portal',
-    aboutTitle: 'About Quantix Codebase Auditor',
+    aboutTitle: 'About Cyphix Codebase Auditor',
     aboutSubtitle: 'AI Multi-Agent 7-Dimensional Cybersecurity & Architecture Platform',
-    aboutDesc: 'Quantix is a next-generation cybersecurity auditing and codebase evaluation platform powered by specialized multi-agent artificial intelligence. It performs deep, exhaustive inspections for OWASP Top 10 vulnerabilities, backend logic flaws, UI/UX responsiveness, SEO metadata, and latency bottlenecks before shipping software to production.',
-    aboutWhyTitle: 'Why Quantix Is Essential in the Era of Vibe Coding & AI Generation',
-    aboutWhyDesc: 'In today’s AI era, where rapid LLM generation and "vibe coding" enable developers to produce thousands of lines of code in seconds, a massive risk of hidden vulnerabilities, OWASP Top 10 flaws, and secret leaks arises. Quantix was engineered as the ultimate security guardian—empowering developers and vibe coders to audit codebases 100% privately in-memory with 7 specialized AI agents before shipping to production.',
+    aboutDesc: 'Cyphix is a next-generation cybersecurity auditing and codebase evaluation platform powered by specialized multi-agent artificial intelligence. It performs deep, exhaustive inspections for OWASP Top 10 vulnerabilities, backend logic flaws, UI/UX responsiveness, SEO metadata, and latency bottlenecks before shipping software to production.',
+    aboutWhyTitle: 'Why Cyphix Is Essential in the Era of Vibe Coding & AI Generation',
+    aboutWhyDesc: 'In today’s AI era, where rapid LLM generation and "vibe coding" enable developers to produce thousands of lines of code in seconds, a massive risk of hidden vulnerabilities, OWASP Top 10 flaws, and secret leaks arises. Cyphix was engineered as the ultimate security guardian—empowering developers and vibe coders to audit codebases 100% privately in-memory with 7 specialized AI agents before shipping to production.',
     aboutCreatorTitle: 'About the Creator & Lead Architect',
     aboutCreatorName: 'Zrng Nawroz Gharib',
     aboutCreatorRole: 'Software Engineer (16+ Yrs Experience)',
@@ -853,7 +853,7 @@ export const translations = {
 
     // Documentation Portal
     docsPortalBadge: '✦ OFFICIAL QUANTIX KNOWLEDGE BASE // ARCHITECTURE & GUIDES ✦',
-    docsHeroTitle: 'Quantix Engineering Documentation & Architecture Guide',
+    docsHeroTitle: 'Cyphix Engineering Documentation & Architecture Guide',
     docsHeroSubtitle: 'Comprehensive technical documentation covering client-side AST extraction, local offline GGUF inference, cloud provider integrations, and 7-dimensional cybersecurity audits.',
     docsSearchPlaceholder: 'Search documentation, guides, API endpoints, tokens, domain topics...',
     docsNavBackToApp: 'Back to Auditor',
@@ -889,7 +889,7 @@ export const translations = {
   // =========================================================================
   ar: {
     // Header & Nav
-    appName: 'Quantix // Auditor',
+    appName: 'Cyphix // Auditor',
     appSubtitle: 'الفاحص السيبراني الذكي للشيفرات البرمجية والمشاريع',
     engineStatus: 'النظام جاهز',
     skipToContent: 'التخطي إلى المحتوى الرئيسي',
@@ -936,11 +936,11 @@ export const translations = {
     docsPrivacy: 'الخصوصية التامة (Privacy by Design):',
     docsPrivacyDesc: 'لا يتم تخزين أي ملفات أو مفاتيح سرية على أي خادم خارجي، وتنتهي المعالجة بالكامل داخل جهاز المستخدم.',
     docsOpenFullPortal: 'فتح بوابة التوثيق والدليل الشامل',
-    aboutTitle: 'حول Quantix Codebase Auditor',
+    aboutTitle: 'حول Cyphix Codebase Auditor',
     aboutSubtitle: 'منظومة متعددة الوكلاء الذكية للتحليل السيبراني والهندسي الشامل',
     aboutDesc: 'منصة ويب متطورة للتحليل السيبراني وهندسة الشيفرات البرمجية بالذكاء الاصطناعي متعدد الوكلاء. يقوم النظام بكشف ثغرات OWASP Top 10 الحرجة، أخطاء الواجهة الخلفية، تجربة المستخدم، السيو، ومشاكل الأداء قبل نشر البرمجيات.',
-    aboutWhyTitle: 'أهمية Quantix في عصر الـ Vibe Coding والتوليد الذكي للشيفرات',
-    aboutWhyDesc: 'في العصر الحالي للذكاء الاصطناعي وثورة الـ "Vibe Coding" حيث يتم توليد آلاف أسطر الشيفرات البرمجية بسرعة فائقة، نشأت مخاطر غير مسبوقة تتعلق بثغرات OWASP Top 10 الأمنية وتسريب البيانات. صُمم Quantix ليكون درعاً أمنياً متكاملاً يفحص الشيفرات بـ ٧ وكلاء متخصصين وبخصوصية تامة داخل ذاكرة RAM قبل النشر.',
+    aboutWhyTitle: 'أهمية Cyphix في عصر الـ Vibe Coding والتوليد الذكي للشيفرات',
+    aboutWhyDesc: 'في العصر الحالي للذكاء الاصطناعي وثورة الـ "Vibe Coding" حيث يتم توليد آلاف أسطر الشيفرات البرمجية بسرعة فائقة، نشأت مخاطر غير مسبوقة تتعلق بثغرات OWASP Top 10 الأمنية وتسريب البيانات. صُمم Cyphix ليكون درعاً أمنياً متكاملاً يفحص الشيفرات بـ ٧ وكلاء متخصصين وبخصوصية تامة داخل ذاكرة RAM قبل النشر.',
     aboutCreatorTitle: 'حول المطور ومؤسس المشروع',
     aboutCreatorName: 'زرنك نوروز غريب (Zrng Nawroz Gharib)',
     aboutCreatorRole: 'مهندس برمجيات (خبرة أكثر من ١٦ عاماً)',
@@ -1128,7 +1128,7 @@ export const translations = {
 
     // Documentation Portal
     docsPortalBadge: '✦ قاعدة المعرفة الرسمية وتوثيق هندسة QUANTIX // ARCHITECTURE & GUIDES ✦',
-    docsHeroTitle: 'دليل التوثيق والهندسة البرمجية لمنظومة Quantix',
+    docsHeroTitle: 'دليل التوثيق والهندسة البرمجية لمنظومة Cyphix',
     docsHeroSubtitle: 'توثيق تقني شامل يغطي استخراج الشيفرات محلياً، تشغيل نماذج GGUF بدون إنترنت، ربط المحركات السحابية، وفحص الأبعاد السبعة للأمان البرمجي بدون تسريب للبيانات.',
     docsSearchPlaceholder: 'البحث في الأقسام، الأدلة، نقاط الاتصال API، المفاتيح، والمحاور...',
     docsNavBackToApp: 'العودة إلى الفاحص (Auditor)',
@@ -1164,7 +1164,7 @@ export const translations = {
   // =========================================================================
   fa: {
     // Header & Nav
-    appName: 'Quantix // Auditor',
+    appName: 'Cyphix // Auditor',
     appSubtitle: 'ممیزی هوشمند سایبری و تحلیل کیفیت سورس‌کد',
     engineStatus: 'سیستم آماده است',
     skipToContent: 'پرش به محتوای اصلی',
@@ -1211,11 +1211,11 @@ export const translations = {
     docsPrivacy: 'حفظ حریم خصوصی (Privacy by Design):',
     docsPrivacyDesc: 'هیچ فایل یا کلیدی در سرور خارجی ذخیره نمی‌شود و کل فرایند در سیستم کاربر پایان می‌یابد.',
     docsOpenFullPortal: 'مشاهده مستندات کامل و جامع',
-    aboutTitle: 'درباره Quantix Codebase Auditor',
+    aboutTitle: 'درباره Cyphix Codebase Auditor',
     aboutSubtitle: 'سامانه هوشمند چندعاملی برای ممیزی سایبری و ارزیابی معماری کد',
     aboutDesc: 'پلتفرم پیشرفته تحت وب جهت ممیزی امنیت سایبری و ارزیابی کیفیت سورس‌کد با بهره‌گیری از هوش مصنوعی چندعاملی. این سیستم رخنه‌های بحرانی OWASP Top 10، باگ‌های بک‌اند، رابط کاربری، سئو و سرعت را قبل از ورود به محیط پروداکشن شناسایی می‌کند.',
-    aboutWhyTitle: 'چرا Quantix در عصر Vibe Coding و هوش مصنوعی حیاتی است؟',
-    aboutWhyDesc: 'در عصر کنونی هوش مصنوعی و رویکرد "Vibe Coding" که کدهای فراوانی در کسری از ثانیه تولید می‌شوند، خطرات امنیتی نظیر رخنه‌های OWASP Top 10 و افشای اطلاعات محرمانه به شدت افزایش یافته است. Quantix به عنوان یک سپر دفاعی ساخته شده تا با ۷ عامل تخصصی و به صورت ۱۰۰٪ امن در حافظه RAM، سورس‌کدها را قبل از انتشار مورد ممیزی قرار دهد.',
+    aboutWhyTitle: 'چرا Cyphix در عصر Vibe Coding و هوش مصنوعی حیاتی است؟',
+    aboutWhyDesc: 'در عصر کنونی هوش مصنوعی و رویکرد "Vibe Coding" که کدهای فراوانی در کسری از ثانیه تولید می‌شوند، خطرات امنیتی نظیر رخنه‌های OWASP Top 10 و افشای اطلاعات محرمانه به شدت افزایش یافته است. Cyphix به عنوان یک سپر دفاعی ساخته شده تا با ۷ عامل تخصصی و به صورت ۱۰۰٪ امن در حافظه RAM، سورس‌کدها را قبل از انتشار مورد ممیزی قرار دهد.',
     aboutCreatorTitle: 'درباره توسعه‌دهنده و معمار پروژه',
     aboutCreatorName: 'زرنگ نوروز غریب (Zrng Nawroz Gharib)',
     aboutCreatorRole: 'مهندس نرم‌افزار (بیش از ۱۶ سال سابقه کدنویسی)',
@@ -1403,7 +1403,7 @@ export const translations = {
 
     // Documentation Portal
     docsPortalBadge: '✦ پایگاه دانش رسمی و مستندات مهندسی QUANTIX // ARCHITECTURE & GUIDES ✦',
-    docsHeroTitle: 'مستندات فنی و راهنمای معماری Quantix',
+    docsHeroTitle: 'مستندات فنی و راهنمای معماری Cyphix',
     docsHeroSubtitle: 'راهنمای جامع ارزیابی کدبیس، راه‌اندازی مدل‌های محلی آفلاین GGUF، پیکربندی ارائه‌دهندگان ابری و تحلیل ۷ بعدی امنیت و معماری.',
     docsSearchPlaceholder: 'جستجو در بخش‌ها، راهنماها، نقاط پایانی API، کلیدها، و موضوعات ۷ بعدی...',
     docsNavBackToApp: 'بازگشت به ارزیاب (Auditor)',

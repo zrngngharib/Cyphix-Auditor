@@ -91,8 +91,13 @@ export const Header: React.FC = () => {
             <div className="w-8 h-8 rounded-full bg-slate-950 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform">
               <Sparkles className="w-4 h-4 text-white" aria-hidden="true" />
             </div>
-            <span className="text-base font-black tracking-tight text-slate-950 font-sans">
-              Quantix <span className="text-slate-400 font-mono">//</span> Auditor
+            <span className="text-base font-black tracking-tight text-slate-950 font-sans flex items-center gap-1.5">
+              <span>Cyphix</span>
+              <span className="text-slate-300 font-mono">//</span>
+              <span className="text-slate-600 font-medium text-sm">Auditor</span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-bold hidden xs:inline-block">
+                v1.0.0
+              </span>
             </span>
           </Link>
 

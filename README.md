@@ -1,8 +1,8 @@
-# 🛡️ Quantix Auditor — AI Multi-Agent 7-Dimensional Codebase & Cybersecurity Auditor
+# 🛡️ Cyphix Auditor — AI Multi-Agent 7-Dimensional Codebase & Cybersecurity Auditor
 
 <div align="center">
 
-![Quantix Banner](https://img.shields.io/badge/Security-SOC_2_%26_HIPAA_Air--Gapped-emerald?style=for-the-badge&logo=shield)
+![Cyphix Banner](https://img.shields.io/badge/Security-SOC_2_%26_HIPAA_Air--Gapped-emerald?style=for-the-badge&logo=shield)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-14_App_Router-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![Multi-Agent](https://img.shields.io/badge/Architecture-7--Dimensional_Multi--Agent-violet?style=for-the-badge)
@@ -45,7 +45,7 @@
 
 ## 💻 Local Offline Models (GGUF via CPU)
 
-Quantix supports 100% private, offline inference running on regular CPU and System RAM (no dedicated GPU required):
+Cyphix supports 100% private, offline inference running on regular CPU and System RAM (no dedicated GPU required):
 
 1. **DeepSeek-R1-Distill-Qwen-7B (`model.gguf` - 4.36 GB):** Deep reasoning & vulnerability discovery. *(Recommended: 16GB+ RAM, 8-core CPU)*.
 2. **Qwen2.5-Coder-7B-Instruct (`qwen-coder-7b.gguf` - 4.36 GB):** High-speed code architecture, TypeScript types, and refactoring. *(Recommended: 16GB RAM)*.
@@ -57,8 +57,8 @@ Quantix supports 100% private, offline inference running on regular CPU and Syst
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/zrngngharib/Quantix-Auditor.git
-cd Quantix-Auditor
+git clone https://github.com/zrngngharib/Cyphix-Auditor.git
+cd Cyphix-Auditor
 npm install
 ```
 
@@ -78,10 +78,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## ⚙️ Automated CI/CD (GitHub Actions)
 
-Quantix includes a built-in GitHub Actions workflow (`.github/workflows/quantix-audit.yml`) to automatically audit your codebase and prevent security regressions on every Pull Request.
+Cyphix includes a built-in GitHub Actions workflow (`.github/workflows/cyphix-audit.yml`) to automatically audit your codebase and prevent security regressions on every Pull Request.
 
 ---
 
 ## 📜 License
 
-MIT License. Designed with excellence by **Quantix Core Team**.
+MIT License. Designed with excellence by **Cyphix Core Team**.
