@@ -64,10 +64,10 @@ export function routeFilesByDomain(
     7: { domainId: 7, domainName: 'Documentation & Code Quality', files: [], totalCharacters: 0, concatenatedPayload: '' },
   };
 
-  const isBackend = (p: string) => /(?:api|server|route|controller|service|model|db|schema|prisma|sql|query|middleware)/i.test(p);
-  const isSecurity = (p: string) => /(?:auth|jwt|crypto|security|password|hash|session|permission|rbac|login|signup|token|\.env)/i.test(p);
-  const isFrontend = (p: string) => /(?:component|view|layout|page|screen|ui|style|css|tsx|jsx|hook|html)/i.test(p);
-  const isConfig = (p: string) => /(?:package\.json|tsconfig|next\.config|env|tailwind)/i.test(p);
+  const isBackend = (p: string) => /(?:api|server|route|controller|service|model|db|schema|prisma|sql|query|middleware|\.py|\.php|\.go|\.java|\.kt|\.cs|\.rs|\.rb|\.c|\.cpp|\.sol)/i.test(p);
+  const isSecurity = (p: string) => /(?:auth|jwt|crypto|security|password|hash|session|permission|rbac|login|signup|token|\.env|oauth|cors|policy)/i.test(p);
+  const isFrontend = (p: string) => /(?:component|view|layout|page|screen|ui|style|css|tsx|jsx|hook|html|\.vue|\.svelte|\.astro|\.dart|\.swift)/i.test(p);
+  const isConfig = (p: string) => /(?:package\.json|tsconfig|next\.config|env|tailwind|docker|yaml|yml|requirements\.txt|pom\.xml|cargo\.toml|composer\.json|gemfile|go\.mod)/i.test(p);
 
   for (const file of files) {
     const p = file.path;
